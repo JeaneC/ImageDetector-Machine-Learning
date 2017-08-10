@@ -21,9 +21,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var imageView: UIImageView! //Connect imageView to imageView
     
     let imagePicker = UIImagePickerController()
+    var resultData: Data!
+    var confidenceValues = [String]()
+    var identifiers = [String]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        resultData = Data()
         
         imagePicker.delegate = self
         imagePicker.sourceType =  .camera
@@ -40,18 +45,61 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let userPickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = userPickedImage
             
+            //We use guard here over if let, prevents us from continuing
             guard let ciimage = CIImage(image: userPickedImage) else {
                 fatalError("Could not convert image")
             }
             
-            
-            //We use guard here over if let, prevents us from continuing
-            
+            detect(image: ciimage)
             
         }
         
         imagePicker.dismiss(animated: true, completion: nil) //Dismiss the imagePicker
     }
+    
+    //Attempts to make a request
+    func detect(image: CIImage) {
+        
+        //loads the CoreMLModel for Inceptionv3
+        guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {
+            fatalError("Loading CoreML Failed")
+        }
+        
+        
+        //Define what a request to the model looks like
+        let request = VNCoreMLRequest(model: model) {(request, error) in
+            
+            //We use guard here because the program shouldn't continue if we can't classify
+            guard let results = request.results as? [VNClassificationObservation] else {
+                fatalError("Model failed to process image.")
+            }
+
+            for index in 0...9 {
+                self.confidenceValues.append(String(format: "%.2f", results[index].confidence * 100) + "%")
+                //Check rounding documentation for more info
+                self.identifiers.append(results[index].identifier.capitalized)
+            }
+            //We get the top 10 values by doing a for loop
+            //Identifier gives the string result for the keywords (which can be more than one)
+            //Such as keyboard, keypad
+            //Confidence returns the confidence rating
+            //We format the values to two decimal places
+
+        }
+        
+        //Create a request handler
+        let handler = VNImageRequestHandler(ciImage: image)
+        
+        //Call the request
+        do {
+            try handler.perform([request])
+        } catch {
+            print(error)
+        }
+    }
+    
+
+    
     
     @IBAction func tappedSearch(_ sender: Any) {
         imagePicker.sourceType = .photoLibrary

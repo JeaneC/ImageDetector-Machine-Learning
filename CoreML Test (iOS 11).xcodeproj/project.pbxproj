@@ -13,6 +13,7 @@
 		418455951F3CCEBB00E11593 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 418455941F3CCEBB00E11593 /* Assets.xcassets */; };
 		418455981F3CCEBB00E11593 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 418455961F3CCEBB00E11593 /* LaunchScreen.storyboard */; };
 		418455A01F3CCF4400E11593 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4184559F1F3CCF4000E11593 /* Inceptionv3.mlmodel */; };
+		418455A21F3CE2DE00E11593 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418455A11F3CE2DE00E11593 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		418455971F3CCEBB00E11593 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		418455991F3CCEBB00E11593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4184559F1F3CCF4000E11593 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
+		418455A11F3CE2DE00E11593 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,40 @@
 		4184558C1F3CCEBB00E11593 /* CoreML Test (iOS 11) */ = {
 			isa = PBXGroup;
 			children = (
-				4184558D1F3CCEBB00E11593 /* AppDelegate.swift */,
-				4184558F1F3CCEBB00E11593 /* ViewController.swift */,
-				418455911F3CCEBB00E11593 /* Main.storyboard */,
-				418455941F3CCEBB00E11593 /* Assets.xcassets */,
-				418455961F3CCEBB00E11593 /* LaunchScreen.storyboard */,
 				418455991F3CCEBB00E11593 /* Info.plist */,
-				4184559F1F3CCF4000E11593 /* Inceptionv3.mlmodel */,
+				418455A51F3CE30D00E11593 /* Other */,
+				418455A41F3CE30500E11593 /* Controllers */,
+				418455A31F3CE2E400E11593 /* Models */,
+				418455911F3CCEBB00E11593 /* Main.storyboard */,
 			);
 			path = "CoreML Test (iOS 11)";
+			sourceTree = "<group>";
+		};
+		418455A31F3CE2E400E11593 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				418455A11F3CE2DE00E11593 /* Data.swift */,
+				4184559F1F3CCF4000E11593 /* Inceptionv3.mlmodel */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		418455A41F3CE30500E11593 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4184558F1F3CCEBB00E11593 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		418455A51F3CE30D00E11593 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				418455941F3CCEBB00E11593 /* Assets.xcassets */,
+				4184558D1F3CCEBB00E11593 /* AppDelegate.swift */,
+				418455961F3CCEBB00E11593 /* LaunchScreen.storyboard */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +168,7 @@
 				418455901F3CCEBB00E11593 /* ViewController.swift in Sources */,
 				418455A01F3CCF4400E11593 /* Inceptionv3.mlmodel in Sources */,
 				4184558E1F3CCEBB00E11593 /* AppDelegate.swift in Sources */,
+				418455A21F3CE2DE00E11593 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
