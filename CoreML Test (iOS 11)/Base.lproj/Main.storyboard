@@ -10,9 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-DemiBold</string>
-            <string>AvenirNext-Medium</string>
+        <array key="Baskerville.ttc">
+            <string>Baskerville</string>
+            <string>Baskerville-Bold</string>
         </array>
     </customFonts>
     <scenes>
@@ -26,8 +26,15 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjb-t1-X4w">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.093449853360652924" green="0.70054996013641357" blue="0.99579840898513794" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.90950346683588656" green="0.95755550564759151" blue="0.9672197699546814" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.093339151879999999" green="0.70666818659999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="23"/>
+                                    <color key="textColor" red="0.97726602620000003" green="0.9616517805" blue="0.99579840900000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
                                 <items>
-                                    <navigationItem title="CoreML Test" id="ZAu-hI-UDm">
+                                    <navigationItem title="Pizam!" id="ZAu-hI-UDm">
                                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="Kg7-H2-Buc">
                                             <connections>
                                                 <action selector="tappedSearch:" destination="BYZ-38-t0r" id="uyb-mO-xdp"/>
@@ -42,55 +49,56 @@
                                 </items>
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tSV-qp-ncQ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="350"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="ndK-W9-UFl"/>
+                                    <constraint firstAttribute="height" constant="300" id="ndK-W9-UFl"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yKd-pf-2UQ">
-                                <rect key="frame" x="0.0" y="414" width="375" height="253"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yKd-pf-2UQ">
+                                <rect key="frame" x="0.0" y="364" width="375" height="303"/>
+                                <color key="backgroundColor" red="0.093339151879999999" green="0.70666818659999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.093339151879999999" green="0.70666818659999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sMd-N3-GZW">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DataCell" rowHeight="50" id="sMd-N3-GZW" customClass="DataTableViewCell" customModule="CoreML_Test__iOS_11_" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sMd-N3-GZW" id="ioq-Iw-3BN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="aOW-77-tkV">
-                                                    <rect key="frame" x="8" y="10" width="359" height="25"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="aOW-77-tkV">
+                                                    <rect key="frame" x="8" y="1.5" width="359" height="47"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vEN-7a-3So">
-                                                            <rect key="frame" x="0.0" y="0.0" width="147.5" height="25"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vEN-7a-3So">
+                                                            <rect key="frame" x="0.0" y="0.0" width="154.5" height="23.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKu-nx-saC">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="56.5" height="25"/>
-                                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
-                                                                    <nil key="textColor"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKu-nx-saC">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="64.5" height="23.5"/>
+                                                                    <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="20"/>
+                                                                    <color key="textColor" red="0.95250592509592746" green="0.97541540861129761" blue="0.97432913059136883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keyboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7S-4c-851">
-                                                                    <rect key="frame" x="66.5" y="0.0" width="81" height="25"/>
-                                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
-                                                                    <nil key="textColor"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keyboard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7S-4c-851">
+                                                                    <rect key="frame" x="74.5" y="0.0" width="80" height="23"/>
+                                                                    <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="20"/>
+                                                                    <color key="textColor" red="0.95250592509592746" green="0.97541540861129761" blue="0.97432913059136883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mf4-tH-ipk">
-                                                            <rect key="frame" x="210" y="0.0" width="149" height="25"/>
+                                                            <rect key="frame" x="0.0" y="23.5" width="161" height="23.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confidence:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dv-Mu-dXz">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="101.5" height="25"/>
-                                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
-                                                                    <nil key="textColor"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="113.5" height="23.5"/>
+                                                                    <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="20"/>
+                                                                    <color key="textColor" red="0.95250592509592746" green="0.97541540861129761" blue="0.97432913059136883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGc-3f-uai">
-                                                                    <rect key="frame" x="111.5" y="0.0" width="37.5" height="25"/>
-                                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
-                                                                    <nil key="textColor"/>
+                                                                    <rect key="frame" x="123.5" y="0.0" width="37.5" height="23.5"/>
+                                                                    <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="20"/>
+                                                                    <color key="textColor" red="0.95250592509592746" green="0.97541540861129761" blue="0.97432913059136883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -98,6 +106,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.093339151879999999" green="0.70666818659999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="aOW-77-tkV" firstAttribute="centerY" secondItem="ioq-Iw-3BN" secondAttribute="centerY" id="79L-Y4-Fo1"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="aOW-77-tkV" secondAttribute="trailing" id="VJe-7s-jum"/>
@@ -105,15 +114,21 @@
                                                 <constraint firstItem="aOW-77-tkV" firstAttribute="leading" secondItem="ioq-Iw-3BN" secondAttribute="leadingMargin" id="tok-3h-JvU"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.093339151879999999" green="0.70666818659999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="confidenceText" destination="hGc-3f-uai" id="5v5-m6-Qia"/>
+                                            <outlet property="guessLabel" destination="qKu-nx-saC" id="1yN-GK-1ON"/>
+                                            <outlet property="guessText" destination="E7S-4c-851" id="eXi-pL-esu"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lBT-wg-tEx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
-                                <color key="backgroundColor" red="0.97636479139328003" green="0.97653168439865112" blue="0.97635418176651001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.19740369915962219" green="0.71743923425674438" blue="0.9672197699546814" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.093449853360000001" green="0.70054996010000004" blue="0.99579840900000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lBT-wg-tEx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7Dz-CL-zgk"/>
                             <constraint firstItem="wjb-t1-X4w" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7Mb-KE-Qqn"/>
@@ -134,6 +149,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="tSV-qp-ncQ" id="RFJ-1P-CsF"/>
+                        <outlet property="tableView" destination="yKd-pf-2UQ" id="fHh-9E-K97"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

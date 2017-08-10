@@ -11,28 +11,40 @@ import UIKit
 import CoreML
 import Vision
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     //Image picker is for the controller
     //Remember to add privacy settings for camera and photolibrary in Info.plist
     //Make sure to have imageView in aspect fit
     //Make sure to clip bounds so image doesn't stretch the screen
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView! //Connect imageView to imageView
     
     let imagePicker = UIImagePickerController()
     var resultData: Data!
-    var confidenceValues = [String]()
-    var identifiers = [String]()
+    var confidenceValues = [String](repeating: "", count: 10)
+    var identifiers = [String](repeating: "", count: 10)
+    var loaded = false
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         resultData = Data()
         
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = 70
+        tableView.reloadData()
+        
         imagePicker.delegate = self
         imagePicker.sourceType =  .camera
         imagePicker.allowsEditing = true
+        
+        
+        
+        
         //Can choose between camera or photo library, have camera as default
         //these things need to be initialized at load
     }
@@ -53,7 +65,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             detect(image: ciimage)
             
         }
-        
+
         imagePicker.dismiss(animated: true, completion: nil) //Dismiss the imagePicker
     }
     
@@ -75,9 +87,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
 
             for index in 0...9 {
-                self.confidenceValues.append(String(format: "%.2f", results[index].confidence * 100) + "%")
+                self.confidenceValues[index] = (String(format: "%.2f", results[index].confidence * 100) + "%")
                 //Check rounding documentation for more info
-                self.identifiers.append(results[index].identifier.capitalized)
+                self.identifiers[index] = (results[index].identifier.capitalized)
             }
             //We get the top 10 values by doing a for loop
             //Identifier gives the string result for the keywords (which can be more than one)
@@ -93,9 +105,33 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //Call the request
         do {
             try handler.perform([request])
+            loaded = true
+            tableView.reloadData()
         } catch {
             print(error)
         }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if(loaded){
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath) as? DataTableViewCell {
+                cell.confidenceText.text = confidenceValues[indexPath.row]
+                cell.guessText.text = identifiers[indexPath.row]
+                return cell
+                
+            }
+        }
+        
+        return DataTableViewCell()
+    
     }
     
 

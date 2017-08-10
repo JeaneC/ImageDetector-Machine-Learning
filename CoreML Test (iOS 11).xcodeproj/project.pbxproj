@@ -14,6 +14,7 @@
 		418455981F3CCEBB00E11593 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 418455961F3CCEBB00E11593 /* LaunchScreen.storyboard */; };
 		418455A01F3CCF4400E11593 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4184559F1F3CCF4000E11593 /* Inceptionv3.mlmodel */; };
 		418455A21F3CE2DE00E11593 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418455A11F3CE2DE00E11593 /* Data.swift */; };
+		418455A81F3CEC0600E11593 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418455A71F3CEC0600E11593 /* DataTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		418455991F3CCEBB00E11593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4184559F1F3CCF4000E11593 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		418455A11F3CE2DE00E11593 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		418455A71F3CEC0600E11593 /* DataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		4184558C1F3CCEBB00E11593 /* CoreML Test (iOS 11) */ = {
 			isa = PBXGroup;
 			children = (
+				418455A61F3CEBEE00E11593 /* View */,
 				418455991F3CCEBB00E11593 /* Info.plist */,
 				418455A51F3CE30D00E11593 /* Other */,
 				418455A41F3CE30500E11593 /* Controllers */,
@@ -92,6 +95,14 @@
 				418455961F3CCEBB00E11593 /* LaunchScreen.storyboard */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		418455A61F3CEBEE00E11593 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				418455A71F3CEC0600E11593 /* DataTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +178,7 @@
 			files = (
 				418455901F3CCEBB00E11593 /* ViewController.swift in Sources */,
 				418455A01F3CCF4400E11593 /* Inceptionv3.mlmodel in Sources */,
+				418455A81F3CEC0600E11593 /* DataTableViewCell.swift in Sources */,
 				4184558E1F3CCEBB00E11593 /* AppDelegate.swift in Sources */,
 				418455A21F3CE2DE00E11593 /* Data.swift in Sources */,
 			);
